@@ -3,6 +3,7 @@
 import inquirer from "inquirer";
 import calculator from './projects/project-01-calculator.js';
 import numberGuessingGame from './projects/project-02-number-guessing-game.js';
+import atmMachine from './projects/project-03-atm-machine.js';
 
 let playGame: boolean = true
 
@@ -13,7 +14,7 @@ while (playGame) {
     type: "list",
     name: "userSelection",
     message: "Select an app to use?",
-    choices: ["Calculator", "Number Guessing Game", "Quit"]
+    choices: ["Calculator", "Number Guessing Game", "ATM Machine", "Quit"]
   }])
   switch (answer?.userSelection) {
     case 'Quit':
@@ -29,6 +30,11 @@ while (playGame) {
     case 'Number Guessing Game':
       console.log('---------- Number Guessing Game ----------')
       await numberGuessingGame();
+      break;
+
+    case 'ATM Machine':
+      console.log('---------- ATM MACHINE ----------')
+      await atmMachine();
       break;
 
   
